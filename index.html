@@ -39,63 +39,111 @@
             animation: spin 1s linear infinite;
             display: none; /* Hidden by default */
         }
-
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        .page {
+            display: none; /* All pages hidden by default */
+        }
+        .page.active {
+            display: block; /* Active page is shown */
+        }
+        .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 9999px; /* Full rounded corners */
+            font-weight: 600;
+        }
+        /* Custom scrollbar for better aesthetics */
+        body::-webkit-scrollbar {
+            width: 8px;
+        }
+        body::-webkit-scrollbar-track {
+            background: #f0f2f5;
+        }
+        body::-webkit-scrollbar-thumb {
+            background-color: #764ba2;
+            border-radius: 10px;
+            border: 2px solid #f0f2f5;
+        }
     </style>
 </head>
 <body class="antialiased">
-    <div class="min-h-screen flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="min-h-screen flex flex-col items-center justify-center py-8 px-4 sm:px-6 lg:px-8">
         <!-- Header Section -->
-        <header class="header-bg w-full py-16 rounded-b-3xl shadow-lg mb-12">
-            <div class="max-w-4xl mx-auto text-center text-white">
-                <!-- Profile Image -->
-                <img src="https://placehold.co/150x150/ffffff/000000?text=Dede+Mudrikatu+Ilyas" onerror="this.onerror=null;this.src='https://placehold.co/150x150/ffffff/000000?text=Foto+Profil';" alt="Foto Dede Mudrikatu Ilyas" class="w-36 h-36 rounded-full mx-auto mb-6 border-4 border-white shadow-md">
-                <h1 class="text-4xl sm:text-5xl font-bold mb-2">Dede Mudrikatu Ilyas</h1>
-                <p class="text-xl sm:text-2xl font-light mb-4">Admin/Finance Administration (FA) Staff</p>
-                <div class="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4 text-lg">
+        <header class="header-bg w-full py-12 rounded-b-3xl shadow-lg">
+            <div class="max-w-4xl mx-auto text-center text-white px-4">
+                <img src="https://placehold.co/150x150/ffffff/000000?text=Foto+Profil" onerror="this.onerror=null;this.src='https://placehold.co/150x150/ffffff/000000?text=Foto+Profil';" alt="Foto Dede Mudrikatu Ilyas" class="w-36 h-36 rounded-full mx-auto mb-4 border-4 border-white shadow-md object-cover">
+                <h1 class="text-3xl sm:text-4xl font-bold mb-1">Dede Mudrikatu Ilyas</h1>
+                <p class="text-lg sm:text-xl font-light mb-4">Admin/Finance Administration (FA) Staff</p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-1 sm:space-y-0 sm:space-x-4 text-md">
                     <span class="flex items-center justify-center">
-                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
                         +62 813 2086 5869
                     </span>
                     <span class="flex items-center justify-center">
-                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
                         dikamudrika635@gmail.com
                     </span>
                 </div>
             </div>
         </header>
 
-        <!-- Main Content Section -->
-        <main class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-xl -mt-20">
-            <!-- Profile Section -->
-            <section class="mb-10">
-                <h2 class="text-3xl font-bold section-title text-gray-800">Profil</h2>
-                <p class="text-gray-700 leading-relaxed text-lg">
-                    Berpengalaman sebagai General Affair Officer di PT. Prakarsa Group, menangani tugas administrasi, pengelolaan fasilitas, dan dukungan operasional harian. Terbiasa bekerja di lingkungan yang dinamis dan multitasking, kini mencari peluang baru di bidang Admin/FA staff untuk terus berkembang dan memberikan nilai positif. Memiliki ketelitian dalam administrasi, kemampuan kontrol keuangan yang solid, serta pemahaman dasar dalam penerapan AI untuk solusi operasional.
-                </p>
+        <!-- Navigation Menu -->
+        <nav class="w-full bg-white shadow-md rounded-full px-4 py-3 -mt-6 mb-8 z-10 max-w-4xl">
+            <ul class="flex flex-wrap justify-center gap-4 sm:gap-6 text-gray-700 text-lg font-medium">
+                <li><a href="#" class="nav-link px-4 py-2 hover:bg-gray-100 transition duration-200 active" data-page="profil-page">Profil</a></li>
+                <li><a href="#" class="nav-link px-4 py-2 hover:bg-gray-100 transition duration-200" data-page="pengalaman-kerja-page">Pengalaman Kerja</a></li>
+                <li><a href="#" class="nav-link px-4 py-2 hover:bg-gray-100 transition duration-200" data-page="pendidikan-page">Pendidikan</a></li>
+                <li><a href="#" class="nav-link px-4 py-2 hover:bg-gray-100 transition duration-200" data-page="keahlian-page">Keahlian</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area - Contains different "pages" -->
+        <main class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-xl mb-12 w-full">
+
+            <!-- Profil Page -->
+            <section id="profil-page" class="page active animate-fade-in">
+                <h2 class="text-3xl font-bold section-title text-gray-800">Profil Saya</h2>
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+                    <div class="flex-shrink-0">
+                        <img src="https://placehold.co/200x200/e0e7ff/3f51b5?text=Dede+Ilyas" onerror="this.onerror=null;this.src='https://placehold.co/200x200/e0e7ff/3f51b5?text=Foto+Profil';" alt="Foto Dede Mudrikatu Ilyas" class="w-48 h-48 rounded-full shadow-lg border-4 border-purple-200 object-cover">
+                    </div>
+                    <div class="flex-grow text-center md:text-left">
+                        <p class="text-gray-700 leading-relaxed text-lg mb-4">
+                            Berpengalaman sebagai General Affair Officer di PT. Prakarsa Group, menangani tugas administrasi, pengelolaan fasilitas, dan dukungan operasional harian. Terbiasa bekerja di lingkungan yang dinamis dan multitasking, kini mencari peluang baru di bidang Admin/FA staff untuk terus berkembang dan memberikan nilai positif.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                            Memiliki ketelitian dalam administrasi, kemampuan kontrol keuangan yang solid, serta pemahaman dasar dalam penerapan AI untuk solusi operasional. Saya siap menerapkan keahlian ini untuk memperlancar operasional dan membantu menekan biaya di PT Home Digital Indonesia.
+                        </p>
+                    </div>
+                </div>
             </section>
 
-            <!-- Work Experience Section -->
-            <section class="mb-10">
-                <h2 class="text-3xl font-bold section-title text-gray-800">Pengalaman Kerja</h2>
-                <div class="space-y-6">
-                    <div class="border-l-4 border-purple-500 pl-4 py-1">
-                        <h3 class="text-xl font-semibold text-gray-800">General Affair Officer & Koordinator Transportasi (Pekerja Alih Daya/Outsourcing)</h3>
-                        <p class="text-md text-gray-600">PT PrakarsaGroup (2023 – 2024)</p>
-                        <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+            <!-- Pengalaman Kerja Page -->
+            <section id="pengalaman-kerja-page" class="page animate-fade-in">
+                <h2 class="text-3xl font-bold section-title text-gray-800">Riwayat Pengalaman Kerja</h2>
+                <div class="space-y-8">
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-md border-l-4 border-purple-500">
+                        <div class="flex items-center mb-2">
+                            <svg class="w-6 h-6 text-purple-600 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.586l1.707 1.707A2 2 0 0118 14.414V17a2 2 0 01-2 2H4a2 2 0 01-2-2v-2.586l1.707-1.707A2 2 0 014 10.586V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 011 1V14a1 1 0 01-1 1H9a1 1 0 01-1-1v-4z" clip-rule="evenodd"></path></svg>
+                            <h3 class="text-xl font-semibold text-gray-800">General Affair Officer & Koordinator Transportasi</h3>
+                        </div>
+                        <p class="text-md text-gray-600 mb-3">PT PrakarsaGroup (Pekerja Alih Daya/Outsourcing) | 2023 – 2024</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
                             <li>Digitalisasi arsip & workflow, meningkatkan efisiensi +40%.</li>
                             <li>Mengelola cash-flow harian hingga Rp20 juta tanpa selisih.</li>
                             <li>Koordinasi transportasi & logistik, mencapai 100% on-time dengan penghematan biaya –15%.</li>
                             <li>Pengelolaan fasilitas & event internal, meningkatkan engagement +30%.</li>
                         </ul>
                     </div>
-                    <div class="border-l-4 border-purple-500 pl-4 py-1">
-                        <h3 class="text-xl font-semibold text-gray-800">Asisten Pimpinan</h3>
-                        <p class="text-md text-gray-600">Boarding School Daarul Amanah (2021 – 2022)</p>
-                        <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-md border-l-4 border-purple-500">
+                        <div class="flex items-center mb-2">
+                            <svg class="w-6 h-6 text-purple-600 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                            <h3 class="text-xl font-semibold text-gray-800">Asisten Pimpinan</h3>
+                        </div>
+                        <p class="text-md text-gray-600 mb-3">Boarding School Daarul Amanah | 2021 – 2022</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
                             <li>Mengelola penjadwalan, dokumen, dan komunikasi pimpinan.</li>
                             <li>Bertanggung jawab atas pengarsipan rahasia & penyusunan laporan.</li>
                             <li>Memberikan dukungan operasional harian dan acara pesantren.</li>
@@ -104,86 +152,97 @@
                 </div>
             </section>
 
-            <!-- Education Section -->
-            <section class="mb-10">
-                <h2 class="text-3xl font-bold section-title text-gray-800">Pendidikan</h2>
-                <div class="space-y-4">
-                    <div class="border-l-4 border-purple-500 pl-4 py-1">
-                        <h3 class="text-xl font-semibold text-gray-800">SMA Daarul Amanah</h3>
+            <!-- Pendidikan Page -->
+            <section id="pendidikan-page" class="page animate-fade-in">
+                <h2 class="text-3xl font-bold section-title text-gray-800">Riwayat Pendidikan</h2>
+                <div class="space-y-6">
+                    <div class="bg-green-50 p-6 rounded-lg shadow-md border-l-4 border-blue-500">
+                        <div class="flex items-center mb-2">
+                            <svg class="w-6 h-6 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.394 2.08a1 1 0 00-.788 0L.245 7.154a1 1 0 00-.003 1.76l9.832 5.676a1 1 0 00.788 0l9.83-5.676a1 1 0 00-.003-1.76L10.394 2.081zm1.096 11.666a1 1 0 01-.16.326l-1.55 1.55a1 1 0 01-1.414 0L6.082 14.07a1 1 0 010-1.414l1.55-1.55a1 1 0 01.326-.16L10 9.882l-1.414-1.414a1 1 0 010-1.414l1.55-1.55a1 1 0 01.326-.16L10 2.081l1.414 1.414a1 1 0 010 1.414l-1.55 1.55a1 1 0 01-.326.16L10 9.882l1.414 1.414a1 1 0 010 1.414z"></path></svg>
+                            <h3 class="text-xl font-semibold text-gray-800">SMA Daarul Amanah</h3>
+                        </div>
                         <p class="text-md text-gray-600">2018 – 2021</p>
                     </div>
-                    <div class="border-l-4 border-purple-500 pl-4 py-1">
-                        <h3 class="text-xl font-semibold text-gray-800">MTs Daarul Amanah</h3>
+                    <div class="bg-green-50 p-6 rounded-lg shadow-md border-l-4 border-blue-500">
+                        <div class="flex items-center mb-2">
+                            <svg class="w-6 h-6 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.394 2.08a1 1 0 00-.788 0L.245 7.154a1 1 0 00-.003 1.76l9.832 5.676a1 1 0 00.788 0l9.83-5.676a1 1 0 00-.003-1.76L10.394 2.081zm1.096 11.666a1 1 0 01-.16.326l-1.55 1.55a1 1 0 01-1.414 0L6.082 14.07a1 1 0 010-1.414l1.55-1.55a1 1 0 01.326-.16L10 9.882l-1.414-1.414a1 1 0 010-1.414l1.55-1.55a1 1 0 01.326-.16L10 2.081l1.414 1.414a1 1 0 010 1.414l-1.55 1.55a1 1 0 01-.326.16L10 9.882l1.414 1.414a1 1 0 010 1.414z"></path></svg>
+                            <h3 class="text-xl font-semibold text-gray-800">MTs Daarul Amanah</h3>
+                        </div>
                         <p class="text-md text-gray-600">2015 – 2018</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Skills Section (Original) -->
-            <section class="mb-10">
-                <h2 class="text-3xl font-bold section-title text-gray-800">Keahlian</h2>
-                <div class="flex flex-wrap gap-3">
-                    <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full shadow-sm">MS Excel (Pivot Table, VLOOKUP)</span>
-                    <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full shadow-sm">Alat AI Dasar (ChatGPT, SimpleAI) untuk Efisiensi Administratif</span>
-                    <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full shadow-sm">Manajemen Dokumen & Fasilitas</span>
-                    <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full shadow-sm">Komunikasi Lintas Tim</span>
+            <!-- Keahlian Page -->
+            <section id="keahlian-page" class="page animate-fade-in">
+                <h2 class="text-3xl font-bold section-title text-gray-800">Keahlian & Kemampuan</h2>
+
+                <!-- Skill Tags -->
+                <div class="mb-8 p-6 bg-purple-50 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Tag Keahlian</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full shadow-sm">MS Excel (Pivot Table, VLOOKUP)</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full shadow-sm">Alat AI Dasar (ChatGPT, SimpleAI) untuk Efisiensi Administratif</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full shadow-sm">Manajemen Dokumen & Fasilitas</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full shadow-sm">Komunikasi Lintas Tim</span>
+                    </div>
+                </div>
+
+                <!-- Skill Visualization Section -->
+                <div class="mb-8 p-6 bg-blue-50 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Visualisasi Tingkat Keahlian</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center flex-wrap">
+                            <span class="w-full sm:w-1/3 font-semibold text-gray-700 mb-2 sm:mb-0">MS Excel</span>
+                            <div class="w-full sm:w-2/3 bg-gray-200 rounded-full h-4">
+                                <div class="bg-purple-600 h-4 rounded-full" style="width: 90%;"></div> <!-- Example proficiency -->
+                            </div>
+                        </div>
+                        <div class="flex items-center flex-wrap">
+                            <span class="w-full sm:w-1/3 font-semibold text-gray-700 mb-2 sm:mb-0">Alat AI Dasar</span>
+                            <div class="w-full sm:w-2/3 bg-gray-200 rounded-full h-4">
+                                <div class="bg-purple-600 h-4 rounded-full" style="width: 80%;"></div> <!-- Example proficiency -->
+                            </div>
+                        </div>
+                        <div class="flex items-center flex-wrap">
+                            <span class="w-full sm:w-1/3 font-semibold text-gray-700 mb-2 sm:mb-0">Manajemen Dokumen & Fasilitas</span>
+                            <div class="w-full sm:w-2/3 bg-gray-200 rounded-full h-4">
+                                <div class="bg-purple-600 h-4 rounded-full" style="width: 85%;"></div> <!-- Example proficiency -->
+                            </div>
+                        </div>
+                        <div class="flex items-center flex-wrap">
+                            <span class="w-full sm:w-1/3 font-semibold text-gray-700 mb-2 sm:mb-0">Komunikasi Lintas Tim</span>
+                            <div class="w-full sm:w-2/3 bg-gray-200 rounded-full h-4">
+                                <div class="bg-purple-600 h-4 rounded-full" style="width: 95%;"></div> <!-- Example proficiency -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI-Powered Skill Enhancer Section -->
+                <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">✨ Tingkatkan Deskripsi Keahlian Anda</h3>
+                    <p class="text-gray-700 mb-4">Pilih keahlian Anda dari daftar di bawah, lalu klik tombol untuk mendapatkan deskripsi profesional yang lebih mendalam, menyoroti bagaimana keahlian tersebut dapat memberikan nilai tambah bagi perusahaan.</p>
+                    <div class="flex flex-col sm:flex-row items-center gap-4 mb-6">
+                        <select id="skill-selector" class="flex-grow p-3 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
+                            <option value="MS Excel (Pivot Table, VLOOKUP)">MS Excel (Pivot Table, VLOOKUP)</option>
+                            <option value="Alat AI Dasar (ChatGPT, SimpleAI) untuk Efisiensi Administratif">Alat AI Dasar (ChatGPT, SimpleAI) untuk Efisiensi Administratif</option>
+                            <option value="Manajemen Dokumen & Fasilitas">Manajemen Dokumen & Fasilitas</option>
+                            <option value="Komunikasi Lintas Tim">Komunikasi Lintas Tim</option>
+                        </select>
+                        <button id="generate-skill-btn" class="flex items-center justify-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transform transition duration-300 hover:scale-105 min-w-[180px]">
+                            ✨ Hasilkan Deskripsi
+                            <div id="loading-spinner" class="loading-spinner ml-2"></div>
+                        </button>
+                    </div>
+                    <div id="skill-description-output" class="bg-white p-5 rounded-lg border border-gray-200 text-gray-800 min-h-[100px] flex items-center justify-center text-center">
+                        Deskripsi yang dihasilkan akan muncul di sini.
+                    </div>
                 </div>
             </section>
 
-            <!-- New: Skill Visualization Section -->
-            <section class="mb-10 p-6 bg-blue-50 rounded-lg shadow-md">
-                <h2 class="text-3xl font-bold section-title text-gray-800 mb-6">📊 Visualisasi Keahlian</h2>
-                <div class="space-y-6">
-                    <div class="flex items-center">
-                        <span class="w-1/3 font-semibold text-gray-700">MS Excel</span>
-                        <div class="w-2/3 bg-gray-200 rounded-full h-4">
-                            <div class="bg-purple-600 h-4 rounded-full" style="width: 90%;"></div> <!-- Example proficiency -->
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="w-1/3 font-semibold text-gray-700">Alat AI Dasar</span>
-                        <div class="w-2/3 bg-gray-200 rounded-full h-4">
-                            <div class="bg-purple-600 h-4 rounded-full" style="width: 80%;"></div> <!-- Example proficiency -->
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="w-1/3 font-semibold text-gray-700">Manajemen Dokumen & Fasilitas</span>
-                        <div class="w-2/3 bg-gray-200 rounded-full h-4">
-                            <div class="bg-purple-600 h-4 rounded-full" style="width: 85%;"></div> <!-- Example proficiency -->
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="w-1/3 font-semibold text-gray-700">Komunikasi Lintas Tim</span>
-                        <div class="w-2/3 bg-gray-200 rounded-full h-4">
-                            <div class="bg-purple-600 h-4 rounded-full" style="width: 95%;"></div> <!-- Example proficiency -->
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- AI-Powered Skill Enhancer Section (Existing) -->
-            <section class="mb-10 p-6 bg-purple-50 rounded-lg shadow-md">
-                <h2 class="text-3xl font-bold section-title text-gray-800 mb-6">✨ Tingkatkan Deskripsi Keahlian Anda</h2>
-                <p class="text-gray-700 mb-4">Pilih keahlian Anda dari daftar di bawah, lalu klik tombol untuk mendapatkan deskripsi profesional yang lebih mendalam, menyoroti bagaimana keahlian tersebut dapat memberikan nilai tambah bagi perusahaan.</p>
-                <div class="flex flex-col sm:flex-row items-center gap-4 mb-6">
-                    <select id="skill-selector" class="flex-grow p-3 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
-                        <option value="MS Excel (Pivot Table, VLOOKUP)">MS Excel (Pivot Table, VLOOKUP)</option>
-                        <option value="Alat AI Dasar (ChatGPT, SimpleAI) untuk Efisiensi Administratif">Alat AI Dasar (ChatGPT, SimpleAI) untuk Efisiensi Administratif</option>
-                        <option value="Manajemen Dokumen & Fasilitas">Manajemen Dokumen & Fasilitas</option>
-                        <option value="Komunikasi Lintas Tim">Komunikasi Lintas Tim</option>
-                    </select>
-                    <button id="generate-skill-btn" class="flex items-center justify-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transform transition duration-300 hover:scale-105 min-w-[180px]">
-                        ✨ Hasilkan Deskripsi
-                        <div id="loading-spinner" class="loading-spinner ml-2"></div>
-                    </button>
-                </div>
-                <div id="skill-description-output" class="bg-white p-5 rounded-lg border border-gray-200 text-gray-800 min-h-[100px] flex items-center justify-center text-center">
-                    Deskripsi yang dihasilkan akan muncul di sini.
-                </div>
-            </section>
-
-            <!-- Call to Action / Contact Section -->
-            <section class="text-center bg-gray-50 p-6 rounded-lg shadow-inner">
+            <!-- Call to Action / Contact Section - Always visible at the bottom of main content -->
+            <section class="text-center bg-gray-50 p-6 rounded-lg shadow-inner mt-10">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4">Siap Berkontribusi untuk Anda!</h2>
                 <p class="text-gray-700 text-lg mb-6">
                     Saya sangat antusias untuk berdiskusi lebih lanjut mengenai kualifikasi saya dan bagaimana saya dapat memberikan nilai positif bagi organisasi Anda.
@@ -202,17 +261,42 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pages = document.querySelectorAll('.page');
             const skillSelector = document.getElementById('skill-selector');
             const generateSkillBtn = document.getElementById('generate-skill-btn');
             const skillDescriptionOutput = document.getElementById('skill-description-output');
             const loadingSpinner = document.getElementById('loading-spinner');
 
+            // Function to show a specific page
+            const showPage = (pageId) => {
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                });
+                document.getElementById(pageId).classList.add('active');
+
+                // Update active navigation link
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+                document.querySelector(`[data-page="${pageId}"]`).classList.add('active');
+            };
+
+            // Event listeners for navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pageId = e.target.dataset.page;
+                    showPage(pageId);
+                });
+            });
+
+            // Handle AI skill description generation
             generateSkillBtn.addEventListener('click', async () => {
                 const selectedSkill = skillSelector.value;
                 skillDescriptionOutput.innerHTML = 'Memuat...';
                 loadingSpinner.style.display = 'block'; // Show spinner
 
-                // Prompt for the LLM
                 const prompt = `Sebagai seorang Admin/FA Staff, bagaimana keahlian "${selectedSkill}" dapat memberikan manfaat konkret bagi perusahaan? Berikan deskripsi profesional dalam 2-3 kalimat.`;
 
                 try {
@@ -246,6 +330,9 @@
                     loadingSpinner.style.display = 'none'; // Hide spinner
                 }
             });
+
+            // Show the profile page by default on load
+            showPage('profil-page');
         });
     </script>
 </body>
